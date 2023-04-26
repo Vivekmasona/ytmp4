@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #04040d;
+  color: white;
+  height: 100vh;
+  overflow-y: hidden;
+}
+body .container {
+  max-width: 1440px;
+  height: 100vh;
+  margin: auto;
+}
+body .container .header {
+  display: flex;
+  height: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .container .header nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  color: white;
+  border-top: 5px solid #4768EE;
+  backdrop-filter: blur(10px);
+}
+body .container .header nav h2 {
+  margin: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+body .container .header nav h2 .yt {
+  color: #FF0000;
+}
+body .container .header nav .input-search {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  width: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: 0.3s 0.2s;
+}
+body .container .header nav .input-search.open-input-search {
+  opacity: 1;
+  width: 30vmin;
+  z-index: 1;
+}
+body .container .header nav img {
+  display: block;
+  margin: 2rem;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.3s;
+}
+body .container .header nav img.hide-img-search {
+  transform: scale(0);
+}
+body .container .header .header-wrapper {
+  font-family: "Open Sans", sans-serif;
+}
+body .container .header .header-wrapper h1 {
+  font-size: 3.5em;
+  width: 560px;
+  text-align: center;
+}
+body .container .header .header-wrapper .url-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+body .container .header .header-wrapper .url-container .url, body .container .header .header-wrapper .url-container .btn-download {
+  font-family: "Open sans", sans-serif;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  outline: none;
+  margin-right: 1rem;
+  border-radius: 3px;
+}
+body .container .header .header-wrapper .url-container .url {
+  width: 50%;
+}
+body .container .header .header-wrapper .url-container .btn-download {
+  font-weight: bold;
+  margin-right: 0;
+  cursor: pointer;
+  background-color: #4768EE;
+  color: white;
+  margin-left: 0.3rem;
+}
+body .container .header .header-wrapper span.error-text {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+}
+@media (max-width: 576px) {
+  body .container .header .header-wrapper h1 {
+    width: 100%;
+  }
+}
+body .container .header.change-height {
+  height: 150px;
+}
+body .container .result-search {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 3rem;
+  font-family: "Open sans", sans-serif;
+  position: relative;
+}
+body .container .result-search .card {
+  overflow: hidden;
+}
+body .container .result-search .card .thumbnail {
+  width: inherit;
+  position: relative;
+}
+body .container .result-search .card .thumbnail img {
+  width: 100%;
+}
+body .container .result-search .card .thumbnail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+}
+body .container .result-search .card .title-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+body .container .result-search .card .title-wrap .title {
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  font-size: 0.9em;
+  width: max-content;
+}
+body .container .result-search .card .choose-btn {
+  display: flex;
+  justify-content: space-between;
+}
+body .container .result-search .card .choose-btn button {
+  font-family: "Open sans", sans-serif;
+  display: block;
+  width: 45%;
+  background-color: #4768EE;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body .container .result-search .more-videos {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0.5rem 0.7rem;
+  background: transparent;
+  font-size: 2rem;
+  color: white;
+  border: none;
+  outline: none;
+  display: flex;
+}
+body .container .result-search .more-videos span[class^=dot-] {
+  display: block;
+}
+body .container .result-search .more-videos .dot-1 {
+  animation: dot-scale 0.3s;
+}
+body .container .result-search .more-videos .dot-2 {
+  animation: dot-scale 0.3s 0.6s;
+}
+body .container .result-search .more-videos .dot-3 {
+  animation: dot-scale 0.3s 0.9s;
+}
+
+@keyframes dot-scale {
+  to {
+    transform: scale(1.5);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
