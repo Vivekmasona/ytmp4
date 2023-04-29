@@ -97,7 +97,15 @@ app.get("/hack", async (req, res) => {
   res.send({ title, thumbnail, audioFormats, formats });
 });
 
+app.get('/downloadmp3', (req, res) => {
+    var URL = req.query.URL;
 
+    res.header('Content-Disposition', `attachment;filename="music.mp3"`);
+    
+    ytdl(URL, {
+        format: "mp3"
+        }).pipe(res);
+});
 
 
 app.get('/search', async function (req, res) {
